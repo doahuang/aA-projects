@@ -1,0 +1,7 @@
+<h1>EDIT CAT!</h1>
+
+<a href=" <%= cat_url(@cat) %> ">Changed my mind. Don't want to edit</a>
+
+<br><br>
+
+<%= render 'form', action: :edit, cat: @cat %>

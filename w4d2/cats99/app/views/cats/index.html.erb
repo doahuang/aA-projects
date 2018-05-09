@@ -1,0 +1,18 @@
+<h1>ALL CATS!</h1>
+
+<a href=" <%= new_cat_url %> ">ADD NEW CAT!</a>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Show</th>
+    <th>Rent</th>
+  </tr>
+  <% @cats.each do |cat| %>
+  <tr>
+    <td><%=cat.name %></td>
+    <td><a href=" <%= cat_url(cat) %> ">show</a> </td>
+    <td>Rent Me! (under construction)</td>
+  </tr>
+    
+  <% end %>
+</table>

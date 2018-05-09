@@ -1,0 +1,35 @@
+<h1><%= @cat.name %></h1>
+
+<table>
+  <tr>
+    <th>Edit</th>
+    <th>Index</th>
+    <th>Name</th>
+    <th>Sex</th>
+    <th>Color</th>
+    <th>Birthday</th>
+    <th>Age</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td> <a href=" <%= edit_cat_url(@cat) %> ">Edit</a> </td>
+    <td> <a href=" <%= cats_url %>  ">Index</a>  </td>
+    <td><%= @cat.name %></td>
+    <td><%= @cat.sex %></td>
+    <td><%= @cat.color %></td>
+    <td><%= @cat.birth_date %></td>
+    <td><%= @cat.age %></td>
+    <td><%= @cat.description %></td>
+  </tr>
+</table>
+
+<br><br>
+
+<form action="<%=cat_url(@cat)%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Goodbye, <%=@cat.name%>">
+</form>
+
+
+
+
