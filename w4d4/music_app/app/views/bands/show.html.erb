@@ -1,0 +1,35 @@
+<p><a href=" <%= bands_url %> ">BACK</a></p>
+
+<p><a href=" <%= new_band_album_url(params[:id]) %> ">ADD A NEW ALBUM</a></p>
+
+<h1> <%= @band.name %> </h1>
+
+<table>
+  
+  <tr>
+    <th>TITLE</th>
+    <th>YEAR</th>
+    <th>CATEGORY</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  
+  <% album = @band.albums %>
+  <% album.each do |album| %>
+    <tr>
+      <td> <%= album.title %> </td>
+      <td> <%= album.year %> </td>
+      <td> <%= album.studio ? 'Studio' : 'Live' %> </td>
+      <td> <a href=" <%= album_url(album) %> ">SHOW</a>  </td>
+      <td> <a href=" <%= edit_album_url(album) %> ">EDIT</a>  </td>
+      <td>
+        <form action=" <%= album_url(album) %> " method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="DELETE">
+        </form>
+      </td>
+    </tr>
+  <% end %>
+  
+</table>

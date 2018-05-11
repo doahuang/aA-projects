@@ -1,0 +1,24 @@
+<%= render '/errors' %>
+
+<% action_url = action == :new_band ? bands_url : band_url(band) %>
+<% action_method = action == :new_band ? 'post' : 'patch' %>
+<% button_text = action == :new_band ? 'ADD BAND' : 'UPDATE BAND' %>
+
+<form action=" <%= action_url %> " method="post">
+  <input type="hidden" name="_method" value="<%= action_method %>">
+  <%= auth_token %>
+  
+  <label for="">
+    BAND PICTURE HERE
+  </label>
+  
+  <label for="name">
+    Name:
+    <input type="text" name="band[name]" value="<%= band.name %>">
+  </label>
+  
+  <input type="submit" value=" <%= button_text %> ">
+</form>
+
+<p><a href=" <%= bands_url %> ">BACK</a></p>
+

@@ -1,0 +1,29 @@
+<h1>Welcome, <%= current_user.email %> </h1>
+
+<p><a href=" <%= new_band_url %> ">ADD A NEW BAND</a></p>
+
+<table>
+  
+  <tr>
+    <th>NAME</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  
+  <% @band = [] if @band.nil? %>
+  <% @band.each do |band| %>
+    <tr>
+      <td> <%= band.name %> </td>
+      <td> <a href=" <%= band_url(band) %> ">SHOW</a>  </td>
+      <td> <a href=" <%= edit_band_url(band) %> ">EDIT</a>  </td>
+      <td> 
+        <form action=" <%= band_url(band) %> " method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="DELETE">
+        </form>
+       </td>
+    </tr>
+  <% end %>
+  
+</table>
