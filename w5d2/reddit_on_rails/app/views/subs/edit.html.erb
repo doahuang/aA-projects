@@ -1,0 +1,5 @@
+<h1>Edit Sub</h1>
+
+<%= link_to "Back to #{@sub.title}", sub_url(@sub) %>
+
+<%= render 'form', action_url: sub_url(@sub), action: 'patch', button_text: 'Update Sub' %>

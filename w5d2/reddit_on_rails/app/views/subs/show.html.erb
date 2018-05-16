@@ -1,0 +1,17 @@
+<h1><%= @sub.title %></h1>
+
+<p><%= @sub.description %></p>
+
+<%= link_to 'Edit Sub', edit_sub_url(@sub) if @sub.moderator == current_user %>
+
+<%= link_to 'Add Post', new_post_url %>
+
+<h4>Posts</h4>
+
+<ul>
+  <% @sub.posts.each do |post| %>
+    <li>
+      <%= link_to "#{post.title} by #{post.author.username}", post_url(post) %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RedditOnRails</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= link_to 'All The Subs', subs_url %>
+    <%= link_to 'Add Sub', new_sub_url %>
+    
+    <% if logged_in? %>
+      <h1>Welcome, <%= current_user.username %></h1>
+      <!-- <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/99472-200.png" alt=""> -->
+      <%= button_to 'Sign Out', session_url, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign In', new_session_url %>
+      <%= link_to 'Sign Up', new_user_url %>
+    <% end %>
+    
+    <%= render './errors' %>
+    
+    <%= yield %>
+  </body>
+</html>
