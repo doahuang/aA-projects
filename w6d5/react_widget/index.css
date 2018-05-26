@@ -1,0 +1,39 @@
+body, div, h1, h2, h3, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+div {
+  margin: 10px;
+}
+
+.clock {
+  padding: 20px;
+  width: 300px;
+  color: white;
+  background-color: orange;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.tabs {
+  padding: 20px;
+  width: 300px;
+  height: 200px;
+  color: white;
+  background-color: lightblue;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.tabs li {
+  display: inline-block;
+  margin: 0 20px 0 0;
+  cursor: pointer;
+}
