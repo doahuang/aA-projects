@@ -1,39 +1,119 @@
-body, div, h1, h2, h3, ul, li {
+body, div, h1, h2, h3, h4, ul, li, span, p, article, input {
   margin: 0;
   padding: 0;
+  list-style: none;
+  font-family: 'VT323', sans-serif;
+  color: inherit;
 }
 
 body {
-  font-family: sans-serif;
   display: flex;
   justify-content: center;
 }
 
 div {
+  font-size: 20px;
+}
+
+h1 {
   margin: 10px;
 }
 
-.clock {
-  padding: 20px;
-  width: 300px;
-  color: white;
-  background-color: orange;
-  border: 2px solid black;
-  border-radius: 5px;
+.group {
+  display: flex;
+  justify-content: space-between;
 }
 
-.tabs {
-  padding: 20px;
-  width: 300px;
-  height: 200px;
-  color: white;
-  background-color: lightblue;
+.clock {
+  width: 500px;
+  padding: 10px 20px;
+  background-color: orange;
   border: 2px solid black;
-  border-radius: 5px;
+}
+
+.weather {
+  width: 500px;
+  height: 60px;
+  padding: 20px;
+  background-color: lightgreen;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.tabs, .auto {
+  width: 250px;
+  height: 250px;
+}
+
+.tab-title ul {
+  display: flex;
+  font-size: 24px;
+  text-align: center;
+}
+
+.tab-content {
+  background-color: lightblue;
+  padding: 20px;
+  border: 2px solid black;
+  border-top: none;
+}
+
+.tab-content article {
+  height: 170px;
+  overflow: scroll;
 }
 
 .tabs li {
-  display: inline-block;
-  margin: 0 20px 0 0;
+  background-color: lightblue;
+  width: 100%;
+  padding: 5px 0;
   cursor: pointer;
+  border: 2px solid black;
+  border-right: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.tabs li:last-child {
+  border-right: 2px solid black;
+}
+
+.tabs li:hover {
+  color: white;
+  background-color: black;
+}
+
+li.tabbed {
+  font-weight: bold;
+  border-bottom: none;
+}
+
+.auto {
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: violet;
+  border: 2px solid black;
+  display: flex;
+  flex-flow: column;
+}
+
+.auto input {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.auto ul {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.auto li {
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.auto li:hover {
+  color: white;
 }

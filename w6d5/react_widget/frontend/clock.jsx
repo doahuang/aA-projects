@@ -1,11 +1,12 @@
 import React from 'react';
 
-class Clock extends React.Component {
+export default class Clock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       time: new Date()
     };
+
     this.tick = this.tick.bind(this);
   }
 
@@ -26,14 +27,22 @@ class Clock extends React.Component {
   render() {
     const time = this.state.time;
     let dateStr = time.toDateString();
-    let timeStr = time.toLocaleTimeString();
+    let timeStr = time.toLocaleTimeString({}, {timeZoneName: 'short'});
+
     return (
-      <div className="clock">
-        <h3>Time: {timeStr}</h3>
-        <h3>Date: {dateStr}</h3>
+      <div>
+        <h1>Clock</h1>
+        <div className="clock">
+          <span className='group'>
+            <h2>Time</h2>
+            <h2>{timeStr}</h2>
+          </span>
+          <span className='group'>
+            <h2>Date</h2>
+            <h2>{dateStr}</h2>
+          </span>
+        </div>
       </div>
-    )
+    );
   }
 }
-
-export default Clock;
