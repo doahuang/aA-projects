@@ -60,7 +60,7 @@ h1 {
 
 .tab-content article {
   height: 170px;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .tabs li {
@@ -105,13 +105,11 @@ li.tabbed {
 .auto ul {
   display: flex;
   flex-wrap: wrap;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .auto li {
-  display: inline-block;
   cursor: pointer;
-  margin: 0 5px;
 }
 
 .auto li:hover {
